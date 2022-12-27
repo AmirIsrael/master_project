@@ -1,0 +1,41 @@
+main:
+  experiment_name_prefix: my_exp
+  seed: 5
+  load_dataset: False
+  num_workers: 6
+  parallel: False
+  gpus_to_use: 1,2
+  trains: False
+  time_steps: 22950
+  tt_split: 0.8
+  dataset_creation: 'pkl'
+  exp_type: 'vel'
+  paths:
+    train: 'data/train'
+    validation: 'data/validation'
+    logs: 'logs/'
+train:
+  num_epochs: 10000
+  batch_size: 8
+  grad_clip: 0.25
+  loss: "mse"
+  save_model: False
+  exp_type: 'vel'
+  lr:
+    lr_value: 0.001
+    lr_decay: 1
+    lr_gamma: 0.1
+    lr_step_size: 30
+model:
+  dropout: 0.3
+  num_hid_mlp: 20
+  num_hid_cnn: 10
+  exp_type: 'vel'
+  pooling: 5
+  res: 500
+  conv_params:
+    kernel_size: 7
+    stride: 1
+    padding: 3
+
+
